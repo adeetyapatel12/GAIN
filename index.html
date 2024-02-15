@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Paper: Attention-Guided Convolutional Networks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .title, .section-title {
+            color: #007bff;
+            text-align: center;
+        }
+        .authors, .section-title {
+            margin-top: 5px;
+            text-align: center;
+            color: #666;
+        }
+        .status, .disclaimer {
+            margin-top: 20px;
+            text-align: center;
+            font-style: italic;
+            color: #333;
+        }
+        .disclaimer {
+            color: #dc3545; /* Red color to highlight the disclaimer */
+            font-weight: bold;
+        }
+        .abstract {
+            margin-top: 30px;
+            background-color: #e9ecef;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+        }
+        .abstract-content {
+            text-align: justify;
+        }
+        .abstract-title, .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Attention-Guided Convolutional Networks for Bias-Mitigated and Interpretable Oral Lesion Classification</h1>
+        <p class="authors">A. Patel, C. Besombes, S. Madathil</p>
+        <p class="status">Under review at International Journal of Computer Vision (IJCV), 2024</p>
+        <p class="disclaimer">Warning: The full paper is not available at this moment as it is currently under review. Please check back later for updates.</p>
+        <div class="abstract">
+            <div class="abstract-title">Abstract</div>
+            <div class="abstract-content">
+                <p><strong>Background:</strong> Oral lesions present significant clinical challenges due to their complexity. Accurate classification is essential for effective diagnosis and treatment. Recent advances in deep learning, particularly CNNs, have shown promise in automating diagnosis with high accuracy. However, these models face two key limitations: they lack interpretability, which is vital for clinical adoption as healthcare professionals need to understand the model’s decision-making process, and are vulnerable to dataset bias—resulting from factors like varying imaging conditions, patient demographics, and lesion features—that hinders their generalization capability.</p>
+                <p><strong>Objective:</strong> This paper aims to introduce a novel deep learning-based approach for the classification of oral lesions that not only achieves high accuracy but also addresses the challenges of interpretability and dataset bias. Our method is inspired by the Guided Attention Inference Network (GAIN) framework and uniquely adapts it for oral lesions diagnosis. By utilizing segmentation masks to guide the attention of a CNN, the approach aligns the model’s focus with clinically relevant regions in oral cavity images. This serves the dual purpose of enhancing interpretability and mitigating dataset bias, thereby improving the model’s utility in diverse clinical settings.</p>
+                <p><strong>Methods:</strong> Our approach integrates four components to address oral lesion classification, focusing on interpretability and dataset bias.
+                    <ol>
+                        <li>Classification Stream: Uses a CNN to classify images into 16 lesion types.</li>
+                        <li>Attention maps: Generated via Grad-CAM and CNN layers, highlight key regions for interpretability.</li>
+                        <li>Guidance Stream: Aligns these maps with clinically relevant regions using external segmentation masks.</li>
+                        <li>Anatomical Site Prediction Stream: Predicts the lesion’s location—improving interpretability.</li>
+                    </ol>
+                    All streams are jointly optimized to balance classification, interpretability, and anatomical accuracy.
+                </p>
+                <p><strong>Results:</strong> We evaluated three oral lesion classification models: the baseline model, the Guided Attention model (GAIN), and the model integrated with both Guided Attention and Anatomical Site Prediction (GAIN+ASP). A range of evaluation metrics were employed, confirming the effectiveness of our methods.
+                    Classification Performance: The GAIN+ASP model demonstrated superiority over the baseline model across key metrics. Specifically, the model demonstrated a 6.56% relative improvement in 16-Class accuracy, rising from 58.01% to 64.57%, and also showed enhanced multi-class classification, evidenced by an increase in the ROC-OvR score from 0.8945 to 0.9132.
+                    Interpretability: Our enhanced models, GAIN and GAIN+ASP, scored significantly higher in interpretability metrics such as Intersection over Union (IoU), Dice Similarity Coefficient (DSC), and Pixel accuracy when compared to the baseline. This points to a better alignment between the attention maps generated and the ground truth, thereby increasing model interpretability.
+                    Dataset Bias: The GAIN+ASP model reduced implausible lesion predictions to 13/688, compared to the baseline’s 19/688. Additionally, when tested for dataset bias on a subset of 15 images, our GAIN model correctly predicted 9/15 cases, significantly outperforming the baseline’s 3/15.
+                </p>
+                <p><strong>Conclusions:</strong> Our findings affirm that our methodologies outperform the baseline in oral lesion classification on multiple fronts—accuracy, discriminability, and calibration. Enhanced interpretability through better-aligned attention maps makes our models viable for clinical use. Ablation studies further confirm effectiveness in anatomical mapping and bias mitigation, reinforcing their potential for clinical integration.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
